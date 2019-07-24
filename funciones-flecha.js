@@ -1,3 +1,5 @@
+//Formato e implementación de funciones de flecha
+
 let saludar = (nombre) => `!Hola ${nombre}!`;
 let sumarDosNumeros = (numero1, numero2) => numero1 + numero2;
 let concatenaPalabras = (palabra1, palabra2, palabra3) => palabra1 + " " + palabra2 + " " + palabra3;

@@ -1,3 +1,4 @@
+//Se crear el objeto deadpool
 let deadpool = {
     nombre: "Wade",
     apellido: "Winston",
@@ -8,12 +9,9 @@ let deadpool = {
     }
 };
 
-//Este código funciona
-
-// let nombre = deadpool.nombre;
-// let apellido = deadpool.apellido;
-// let poder = deadpool.poder;
-
+//Se modifica el nombre del campo "nombre" a "nombreDeadpool"
 let {nombre: nombreDeadpool, apellido, poder} = deadpool;
 
 console.log(nombreDeadpool, apellido, poder);
+
+console.log(deadpool.getDatos());   

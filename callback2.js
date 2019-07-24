@@ -11,7 +11,8 @@ let salarios = [
     {id: 2, salario: 2000},
 ];
 
-
+/*Se implementa la función getEmpleado con el formato de función flecha, busca un empleado 
+con id asociado en el array empleados y lo resuelve, en caso contrario lanza un error.*/
 let getEmpleado = (id, callback) => {
     let empleadoDB = empleados.find(empleado => empleado.id === id);
     
@@ -24,6 +25,9 @@ let getEmpleado = (id, callback) => {
     }
 }
 
+/*Se implementa la función getSalario con el formato de función flecha, a través de la entrada
+de un empleado busca un salario asociado a su id y devuelve un objeto con el nombre y el salario
+de dicho empleado, en caso contrario lanza un error.*/
 let getSalario = (empleado, callback) => {
     let salarioDB = salarios.find(salario => salario.id === empleado.id);
 
@@ -41,6 +45,7 @@ let getSalario = (empleado, callback) => {
     }
 }
 
+/*Se imprime el resultado en caso de éxito, en caso contraroio se manejan los errores*/
 getEmpleado(1, (err, empleado) => {
     if(err){
         console.log(err);

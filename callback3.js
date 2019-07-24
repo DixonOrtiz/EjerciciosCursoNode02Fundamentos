@@ -1,3 +1,6 @@
+/*Ejercicio de callbacks*/
+
+//Se crea el array de objetos profesores
 let profesores = [
     {id: 1, nombre: "Luis"},
     {id: 2, nombre: "Sebastián"},
@@ -5,6 +8,7 @@ let profesores = [
     {id: 4, nombre: "Carlos"}
 ];
 
+//Se crea el array de obejtos materias
 let materias = [
     {id: 1, materia: "Teoría de Sistemas"},
     {id: 2, materia: "Computación Paralela"},
@@ -13,6 +17,7 @@ let materias = [
     {id: 3, materia: "Trabajo de Título"}
 ];
 
+//Encuentra un profesor del registro según id
 let getProfesor = (id, callback) => {
     let profesorSegunId = profesores.find(profesor => profesor.id === id);
     
@@ -24,6 +29,7 @@ let getProfesor = (id, callback) => {
     }
 }
 
+//Encuentra una materia/s del registro según id de profesor recibido
 let getMaterias = (profesor, callback) => {
     let materiasSegunId = materias.filter(materia => materia.id === profesor.id);
     
@@ -36,6 +42,7 @@ let getMaterias = (profesor, callback) => {
 
 }
 
+//Obtiene solo los nombres de las materias de un objeto y las devuelve como un array
 let retornarArrayMaterias = (materiasParametro) => {
     let materias = [];
 
@@ -46,7 +53,9 @@ let retornarArrayMaterias = (materiasParametro) => {
     return materias;
 }
 
-
+/*Se devuelve el nombre y las materias del profesor en caso de éxito, en caso contrario se 
+manejan los errores. (Esta forma de trabajar es poco clara y difícil de mantener, se ha realizado
+únicamente con fines de aprendizaje)*/
 getProfesor(2, (err, profesorSegunId) => {
     if(err){
         console.log(err);
